@@ -19,6 +19,7 @@ export default {
 <style scoped>
 #time {
   text-align: center;
+  margin: 10px 10px;
   font-weight: 600;
 }
 </style>
