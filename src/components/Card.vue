@@ -1,10 +1,10 @@
 <template>
     <div class="card">
         <div class="bitcoin">
-            <i class="fab fa-bitcoin fa-3x"></i>
+            <i class="fab fa-bitcoin"></i>
         </div>
-        <div>
-            <i class="fas fa-equals fa-2x"></i>
+        <div class="equal">
+            <i class="fas fa-equals"></i>
         </div>
         <div class="dollar">
             <i class="fas fa-dollar-sign"></i> 
@@ -39,8 +39,46 @@ export default {
   border-top: 0.7px solid #eee;
 }
 
+.bitcoin {
+  margin: 0 15px;
+  font-size: 2.7rem;
+}
+
+.equal {
+  margin: 0 15px;
+  font-size: 1.5rem;
+}
+
 .dollar {
   font-size: 2rem;
   font-weight: 700;
+  margin: 0 15px;
+}
+
+@media only screen and (max-width: 700px) {
+  .bitcoin {
+    font-size: 2rem;
+  }
+
+  .equal {
+    font-size: 1rem;
+  }
+
+  .dollar {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 334px) {
+  .bitcoin {
+    font-size: 1.5rem;
+  }
+  .equal {
+    font-size: 1rem;
+  }
+  .dollar {
+    font-size: 1rem;
+    font-weight: 800;
+  }
 }
 </style>
