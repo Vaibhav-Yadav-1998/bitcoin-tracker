@@ -3,7 +3,7 @@
         <div class="logo">
             <img src="../assets/bitcoin-logo.png" alt="">
         </div>
-        <h1>
+        <h1 class="title">
             BitCoin Tracker
         </h1>
     </header>
@@ -36,5 +36,19 @@ header {
   display: block;
   max-width: 100px;
   height: auto;
+}
+
+@media only screen and (max-width: 400px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    padding: 0 2px;
+  }
+
+  .logo img {
+    max-width: 80px;
+  }
 }
 </style>
