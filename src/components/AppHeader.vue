@@ -21,12 +21,11 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #42b883;
+  background-color: #212121;
   color: white;
   text-align: center;
-  padding: 1px;
   box-sizing: border-box;
-  box-shadow: 3px 3px 3px silver;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .logo {
