@@ -16,8 +16,7 @@ export default {
 </script>
 
 <style>
-html,
-body {
+#app {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
