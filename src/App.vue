@@ -1,14 +1,36 @@
 <template>
   <div id="app">
-    <app-header />
-    <bitcoin-card :money="rate" />
-    <update-time :time="time" />
-    <div id="graph">
-      <price-chart :chart-data="dataCollection" :options="{responsive: true, maintainAspectRatio: false}" />
+    <app-header />   
+
+    <div class="wrapper">
+      <bitcoin-card :money="rate" />
     </div>
+
+    <update-time :time="time" />
+
+    <div id="refresh">
+      <i role="button" title="refresh" class="fas fa-sync-alt fa-2x" @click="getPrice"></i>
+    </div>
+
+    <div class="wrapper">
+      <div id="graph">
+         <price-chart :chart-data="dataCollection" :options="{responsive: true, maintainAspectRatio: false}" />
+      </div>
+    </div>
+
     <div id="info">
       Bitcoin Price Changes in Last One Month
     </div>
+
+    <footer>
+      Disclaimer : This data was produced from the CoinDesk Bitcoin Price Index (USD).
+      
+      <div class="credit">
+        This App is Made by <a href="https://github.com/vaibhav-yadav-1998" target="_blank">
+            Vaibhav Yadav
+        </a>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -54,12 +76,8 @@ export default {
       axios
         .get(url)
         .then(res => {
-          console.log(res.data.bpi);
           const labels = Object.keys(res.data.bpi);
           const data = Object.values(res.data.bpi);
-
-          console.log(labels);
-          console.log(data);
 
           this.dataCollection = {
             labels: labels,
@@ -92,6 +110,29 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.wrapper {
+  margin: 5px 10px;
+}
+
+#refresh {
+  text-align: center;
+  margin: 35px;
+}
+
+#refresh i {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#refresh i:hover {
+  color: gray;
+}
+
+#refresh i:active {
+  color: #41b883;
+  transform: rotate(30deg);
+}
+
 #graph {
   max-width: 900px;
   margin: 50px auto;
@@ -101,6 +142,21 @@ export default {
 #info {
   text-align: center;
   font-weight: 600;
-  margin: 20px 0;
+  margin: 20px 10px;
+}
+
+footer {
+  text-align: center;
+  font-weight: 600;
+  margin: 40px 10px;
+}
+
+.credit {
+  margin: 30px 10px;
+}
+
+.credit a {
+  color: #41b883;
+  text-decoration: none;
 }
 </style>
